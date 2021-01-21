@@ -1,0 +1,24 @@
+ALGORITHM Somme-elements
+VAR
+    tab1,tab2 : ARRAY_OF INTEGER[50];
+    i,j : INTEGER;
+    sum : INTEGER :=  0;
+    search : BOOLEAN;
+BEGIN
+  
+
+    FOR i FROM 0 TO tab1.length-1 DO
+        search := FALSE;
+        FOR j FROM 0 TO tab2.length-1 DO
+            IF(tab1[i] = tab2[j]) THEN
+                search := TRUE;
+                BREAK;
+            END
+        END_FOR
+        IF (NOT search) THEN
+            sum := sum + tab1[i];
+        END_IF
+    END_FOR
+
+    Write(sum);
+END

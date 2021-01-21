@@ -1,0 +1,24 @@
+ALGORITHM problem2-solution1
+VAR
+    tab1,tab2 : ARRAY_OF INTEGER[20];
+    i,j : INTEGER;
+    sum : INTEGER :=  0;
+    search : BOOLEAN;
+BEGIN
+    
+
+    FOR i FROM 0 TO tab1.length-1 DO
+        search := FALSE;
+        FOR j FROM 0 TO set2.length-1 DO
+            IF(tab1[i] = tab2[j]) THEN
+                search := TRUE;
+                BREAK;
+            END
+        END_FOR
+        IF (search) THEN
+            sum := sum + tab1[i]*2;
+        END_IF
+    END_FOR
+
+    Write(sum);
+END
